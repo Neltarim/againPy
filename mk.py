@@ -25,18 +25,14 @@ def env_ignore(): #ecrit le .gitignore
 
     with open(path, 'w') as f:
         f.write("env/\n")
-        f.write("__pycache__")
+        f.write("__pycache__\n")
+        f.write(".vscode/")
 
 def mk_env(): #cree l'environnement virtuel 
     os.system("virtualenv -p python3 env")
     print("[again]virtual environnement created.")
     #os.system("source env/bin/activate") <= not working yet (source not found)
     os.system("touch requirements.txt")
-    os.system("pip freeze > requirements.txt") #freeze les dependances dans requirements.tx
-    print("[again]requirements imported in requirements.txt")
     os.system("touch .gitignore")
     env_ignore()
     print("[again].gitignore file created.")
-
-if __name__ == "__main__":
-    main()

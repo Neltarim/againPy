@@ -3,7 +3,7 @@
 
 ##################################################################
 #                                                                #
-#       Bienvenue dans againPy.                                  #
+#       Bienvenue dans againPy 1.2.                              #
 #   Ce petit programme permet de creer un nouveau projet python, #
 #   Son repertoire git ainsi que les fichiers de base et un      #
 #   environnement virtuel.                                       #
@@ -52,6 +52,7 @@ def main():
         sys.exit(0)
     print("[again]Repo git created. Now making the basics files ...")
     name_py = input("[again]chose a name for your first .py file :")
+
     try:
         mk_py(name_py) #se referer a mk.py
         mk_env() #idem
