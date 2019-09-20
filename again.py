@@ -35,7 +35,9 @@ def main():
     name_usr = os.getlogin() #recupere le login du user
     print("[again]Hi {}, here we go again.".format(name_usr))
     name_dir = input("[again]please enter the name of directory : ")
+    mode = input("[again]Do you want a NORMAL py project or a EMPTY directory? : ")
     path = "./" + name_dir #on ajoute ./ ppar securite sur le chemin d'acces
+
     print("[again]Creating the git directory ...")
     try:
         new_dir(path)
@@ -51,11 +53,20 @@ def main():
         print("[again]an error has occured in the init of git repository.")
         sys.exit(0)
     print("[again]Repo git created. Now making the basics files ...")
-    name_py = input("[again]chose a name for your first .py file :")
+
+    if mode == "EMPTY" or "empty":
+        print("[again]Have a nice coding day and don't forget to push.")
+        sys.exit(0)
+
+
+    name_py = input("[again]chose a name for your first .py file : ")
+    yesno_env = input("[again]Do you want a virtual env? (YES/no) : ")
 
     try:
         mk_py(name_py) #se referer a mk.py
-        mk_env() #idem
+
+        if yesno_env == "yes" or "YES":
+            mk_env() #idem
     except:
         print("[again]an error has occured when creating files.")
         rm_all(path)
