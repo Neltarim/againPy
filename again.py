@@ -14,6 +14,7 @@
 
 import os
 import sys
+
 from mk import *
 
 
@@ -39,6 +40,7 @@ def main():
     path = "./" + name_dir #on ajoute ./ ppar securite sur le chemin d'acces
 
     print("[again]Creating the git directory ...")
+
     try:
         new_dir(path)
     except:
@@ -47,6 +49,7 @@ def main():
         sys.exit(0)
 
     print("[again]New directory created.\nCreating the repository ...")
+
     try:
         git_init(name_dir)
     except:
@@ -72,9 +75,11 @@ def main():
         rm_all(path)
         sys.exit(0)
 
+
     path_py = name_py + ".py"
     print("[again]" + path_py + " file created successfuly.")
-    print("[again]{}.py created successfully.\n[again]Don't forget to push and have a nice coding day.".format(name_dir))
+    print("[again]{}.py created successfully.")
+    print("[again]Don't forget to push and have a nice coding day.".format(name_dir))
     os.system("code .") #ouvre visual code sur ce dossier
 
 if __name__ == '__main__':
