@@ -55,12 +55,12 @@ def main():
     except:
         print("[again]an error has occured in the init of git repository.")
         sys.exit(0)
-    print("[again]Repo git created. Now making the basics files ...")
+    print("[again]Repo git created.")
 
-    if mode == "EMPTY" or "empty":
+    if mode == "NORMAL" or "NORMAL":
         print("[again]Have a nice coding day and don't forget to push.")
         sys.exit(0)
-
+        
 
     name_py = input("[again]chose a name for your first .py file : ")
     yesno_env = input("[again]Do you want a virtual env? (YES/no) : ")
