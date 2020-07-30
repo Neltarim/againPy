@@ -88,7 +88,7 @@ class Agn():
 
         prompt("Name your web app :")
         app_name = input(USR)
-        os.system("django-admin startproject" + app_name)
+        os.system("django-admin startproject " + app_name)
 
 
     def make(self):
@@ -111,7 +111,7 @@ class Agn():
             prompt("ERROR: No such project type.")
             return 0
 
-        self.git_push(first=True)
+        self.git_push(make=True)
         os.mkdir(self.path + "test_zone")
 
     ################ SAVE && IMPORT ######################

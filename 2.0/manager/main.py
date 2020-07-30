@@ -48,7 +48,7 @@ class Manager():
         choice = input(USR)
 
         ls = self.get_lst()
-        path = ls[choice]
+        path = "~/Documents/" + ls[choice]
 
         os.chdir(path)
 
